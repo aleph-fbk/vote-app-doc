@@ -1,0 +1,131 @@
+:root {
+  --primary-hue: 223deg;
+  --primary-saturation: 77%;
+  --primary-lightness: 29%;
+}
+
+.dark {
+  --primary-hue: 355deg;
+  --primary-saturation: 100%;
+  --primary-lightness: 85%;
+}
+
+@import "./chroma-catppuccin-mocha.css";
+
+@media all {
+  .dark-invertible:not(html[class~="dark"] *) { filter: invert(100%); }
+  .light-invertible:is(html[class~="dark"] *) { filter: invert(100%); }
+}
+
+/* Keep the sticky header solid instead of letting Hextra's white blur wash it out. */
+.hextra-nav-container {
+  background-color: #0060ac !important;
+}
+
+.hextra-nav-container-blur {
+  background-color: #0060ac !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.dark .hextra-nav-container,
+.dark .hextra-nav-container-blur {
+  background-color: var(--hx-color-dark) !important;
+}
+
+.hextra-nav-container nav a,
+.hextra-nav-container nav button {
+  color: #fff;
+}
+
+.hextra-nav-container nav svg {
+  color: #fff;
+}
+
+.hextra-nav-container:not(html[class~="dark"] *) .hextra-search-trigger {
+  background-color: rgb(255 255 255 / 20%);
+  color: #fff;
+}
+
+.hextra-nav-container:not(html[class~="dark"] *) .hextra-search-trigger:hover {
+  background-color: rgb(255 255 255 / 30%);
+}
+
+.site-inline-search {
+  position: relative;
+  z-index: 30;
+  width: min(12rem, 30vw);
+}
+
+.site-inline-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 0.6rem;
+  width: 1rem;
+  height: 1rem;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: rgb(255 255 255 / 90%);
+}
+
+.site-inline-search-input {
+  width: 100%;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 0.5rem;
+  background: rgb(255 255 255 / 20%);
+  color: #fff;
+  padding: 0.4rem 0.65rem 0.4rem 2rem;
+  font: inherit;
+  outline: none;
+}
+
+.site-inline-search-input::placeholder {
+  color: rgb(255 255 255 / 85%);
+}
+
+.site-inline-search-input:focus {
+  border-color: #fff;
+  background: rgb(255 255 255 / 27%);
+  box-shadow: 0 0 0 2px rgb(255 255 255 / 25%);
+}
+
+.site-inline-search-results {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  right: 0;
+  left: 0;
+  max-height: 60vh;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0.3rem;
+  list-style: none;
+  border: 1px solid rgb(0 0 0 / 12%);
+  border-radius: 0.6rem;
+  background: #fff;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 18%);
+  color: #1f2937;
+}
+
+.site-inline-search-results[hidden] {
+  display: none;
+}
+
+.hextra-nav-container .site-inline-search-results a {
+  display: block;
+  border-radius: 0.35rem;
+  padding: 0.55rem 0.65rem;
+  color: #1f2937;
+  text-decoration: none;
+}
+
+.site-inline-search-results a:hover,
+.site-inline-search-results a:focus {
+  background: #e7f1f8;
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  .site-inline-search {
+    width: min(9rem, 28vw);
+  }
+}
