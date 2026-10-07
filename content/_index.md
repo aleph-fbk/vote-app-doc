@@ -8,8 +8,6 @@ cascade:
 ## Overview
 Vote App aims to develop an electronic voting system that supports secure, verifiable, and coercion-resistant remote voting.
 
-This work has been developed in the context of a research project partly funded by the Italian national mint (Istituto Poligrafico e Zecca dello Stato) and adapted to the Italian electoral law for Italian citizens voting from abroad.
-
 ## Resources
 
 The main components developed within the project are available as open-source software:
